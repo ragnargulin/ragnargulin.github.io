@@ -152,8 +152,3 @@ window.addEventListener("load", () => {
         closeModal();
     }
 });
-
-// Remove the hash from the URL
-if (window.location.hash) {
-    history.replaceState(null, '', window.location.href.split('#')[0]);
-}

@@ -4,13 +4,12 @@ TO DO
 - definiera rubriknivåer med flex-mått (byta ut mot dimensionerna i root kanske?). Kan man även lägga till transition, så att rubirker läses in först, sen h2, h3, p etc
 - nav till toppen eller hamburgare för mobile
 - minimera alla SVG med online-verktyg
+- minimera allt PNG och JPG
 
 
 
 
 OPTIMISERING // GÖRA SIST
-- att göra hela sidan till nån sån lista-grej? Så den bara uppdaterar det som syns på skärmen
-- alla svg kan vara inline
 - ladda ner google fonts, och bara de storlekar som används
 - Lägg till tillgänglighetsfunktioner
 - Lägg till aria labels på allt
