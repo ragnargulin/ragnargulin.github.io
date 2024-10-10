@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ragnar Gulin's UX/UI/Frontend Design Portfolio showcasing projects in user research, wireframing, and prototyping.">
+<meta name="keywords" content="UX Designer, UI, Frontend, Front end, Developing, Engineer, Informatics, Portfolio, User Experience, Wireframes, Prototyping">
+  <title>● Ragnar ● Gulin ●</title>
+  <link rel="icon" type="image/x-icon" href="icons/ghost.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="bodyLeft.css">
+  <link rel="stylesheet" type="text/css" href="bodyRight.css">
+</head>
+
+<body>
+  <div class="background-icon">
+    <svg viewBox="5 5 90 90" xmlns="http://www.w3.org/2000/svg" id="background-image" fill="currentColor">
+      <circle r="45" cx="50" cy="50"/>
+    </svg>
+  </div>
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImage" alt="larger version of clicked image" src="">
+  </div>
+  <div class="bodyWrapper">
+    <div class="bodyLeft">
+      <div class="logo-container">
+        <div class="hover-image-container">
+          <img src="images/ragnar.png" class="hover-image" alt="">
+        </div>
+        <svg id="spinning-logo" class="logo" width="84" height="103" viewBox="0 0 84 103"
+           fill-rule="evenodd" fill="#333333">
+            <path
+              d="M 8.5 25.5 A 21.401 21.401 0 0 0 10.241 22.988 A 17.763 17.763 0 0 0 11.05 21.45 A 11.915 11.915 0 0 1 12.193 19.518 Q 12.811 18.657 13.627 17.788 A 21.575 21.575 0 0 1 14.1 17.3 A 30.987 30.987 0 0 1 15.601 15.021 A 22.7 22.7 0 0 1 17.2 13.05 A 26.636 26.636 0 0 1 19.447 10.857 A 22.882 22.882 0 0 1 20.5 10 Q 22.2 8.7 23.95 7.7 Q 25.7 6.7 27.4 5.8 A 71.257 71.257 0 0 1 28.891 4.97 Q 29.477 4.654 30.004 4.386 A 33.776 33.776 0 0 1 31 3.9 Q 32.4 3.247 34.062 2.244 A 47.115 47.115 0 0 0 34.3 2.1 Q 35.8 1.3 37.1 0.65 A 5.24 5.24 0 0 1 38.19 0.26 Q 39.245 0 40.7 0 Q 44.1 0 47.95 0.1 A 49.411 49.411 0 0 1 55.55 0.904 A 54.024 54.024 0 0 1 55.8 0.95 Q 59.8 1.7 63.65 3.25 A 24.625 24.625 0 0 1 70.005 7.034 A 28.21 28.21 0 0 1 70.85 7.75 A 26.023 26.023 0 0 1 74.564 11.835 A 33.811 33.811 0 0 1 76.8 15.3 Q 79.141 19.442 80.59 25.286 A 59.151 59.151 0 0 1 80.9 26.6 Q 81.4 28.7 81.55 30.9 Q 81.7 33.1 81.9 35.5 Q 82.3 39.4 82.75 43.85 Q 83.2 48.3 83.7 53.2 Q 83.9 55.2 84.35 57.6 A 27.055 27.055 0 0 1 84.714 60.205 A 21.567 21.567 0 0 1 84.8 62.1 Q 84.8 63.4 84.35 64 A 3.826 3.826 0 0 0 83.997 64.578 Q 83.847 64.876 83.719 65.235 A 7.678 7.678 0 0 0 83.6 65.6 Q 82.6 68.3 81.05 71.75 A 40.76 40.76 0 0 1 78.114 77.18 A 36.849 36.849 0 0 1 77.5 78.1 A 6.551 6.551 0 0 0 77.114 78.518 Q 76.754 78.948 76.622 79.297 A 1.131 1.131 0 0 0 76.55 79.6 Q 76.5 80.2 76.2 80.8 A 4.305 4.305 0 0 1 75.584 81.58 A 3.569 3.569 0 0 1 75 82.05 Q 74.3 82.5 73.8 83.2 Q 72.1 86.5 69.65 89.45 Q 67.2 92.4 64 94.5 Q 61.2 96 58.45 97.85 A 35.544 35.544 0 0 1 55.409 99.691 A 27.924 27.924 0 0 1 53.1 100.8 Q 50.9 101.7 49.7 102.15 Q 48.5 102.6 47.8 102.75 Q 47.1 102.9 46.6 102.9 A 6.217 6.217 0 0 0 46.197 102.914 Q 45.972 102.929 45.717 102.959 A 12.701 12.701 0 0 0 45.4 103 Q 43.9 103.2 42.25 103.45 Q 40.6 103.7 39 103.7 A 27.312 27.312 0 0 1 33.234 103.109 A 23.888 23.888 0 0 1 30.8 102.45 A 42.501 42.501 0 0 1 26.447 100.76 A 34.67 34.67 0 0 1 23.95 99.5 Q 20.9 97.8 18.7 95.9 Q 16.5 94 15.3 92.7 A 83.597 83.597 0 0 1 9.826 85.853 A 66.399 66.399 0 0 1 6.4 80.55 Q 2.9 74.5 1.5 68.9 A 31.241 31.241 0 0 1 0.945 66.55 Q 0.705 65.338 0.518 63.975 A 54.27 54.27 0 0 1 0.4 63.05 A 69.243 69.243 0 0 1 0.157 60.697 Q 0 58.842 0 57.4 A 39.794 39.794 0 0 1 0.171 53.791 A 49.354 49.354 0 0 1 0.45 51.4 Q 0.9 48.2 1.7 44.9 Q 2.5 41.6 3.55 38.4 A 98.539 98.539 0 0 1 4.815 34.776 A 79.299 79.299 0 0 1 5.7 32.5 Q 6.5 30.8 7.25 29.05 Q 8 27.3 8.5 25.5 Z M 44.8 6.7 Q 39.9 6.7 35.6 8.75 A 45.613 45.613 0 0 0 30.17 11.791 A 38.953 38.953 0 0 0 27.9 13.4 A 50.839 50.839 0 0 0 25.145 15.656 Q 23.77 16.869 22.654 18.06 A 29.681 29.681 0 0 0 22.25 18.5 A 220.525 220.525 0 0 0 21.34 19.517 Q 20.109 20.902 19.521 21.623 A 15.644 15.644 0 0 0 19.3 21.9 Q 17.2 24.4 15.8 26.7 A 34.404 34.404 0 0 0 14.003 30.078 A 41.078 41.078 0 0 0 13.25 31.8 A 53.95 53.95 0 0 0 12.253 34.432 Q 11.777 35.789 11.31 37.314 A 92.235 92.235 0 0 0 11 38.35 Q 10.244 40.928 9.298 44.286 A 965.842 965.842 0 0 0 8.4 47.5 Q 7.9 49.5 7.45 51.5 Q 7 53.5 7 55.7 Q 7 60.7 7.95 64.75 A 49.076 49.076 0 0 0 8.991 68.535 A 35.932 35.932 0 0 0 10.25 71.9 A 41.304 41.304 0 0 0 11.355 74.246 Q 11.914 75.337 12.482 76.253 A 21.36 21.36 0 0 0 13 77.05 Q 14.154 78.74 14.968 79.716 A 13.507 13.507 0 0 0 15.3 80.1 Q 16.9 82.4 18.75 85.05 A 26.446 26.446 0 0 0 20.004 86.712 Q 20.65 87.497 21.276 88.108 A 11.352 11.352 0 0 0 22.3 89 A 35.167 35.167 0 0 0 28.627 93.451 A 40.861 40.861 0 0 0 30.65 94.5 A 23.268 23.268 0 0 0 39.69 96.764 A 27.409 27.409 0 0 0 41.1 96.8 Q 43.7 96.8 46.2 96.1 A 32.843 32.843 0 0 0 49.01 95.181 A 26.659 26.659 0 0 0 50.75 94.45 A 61.802 61.802 0 0 0 52.438 93.638 Q 53.456 93.128 54.3 92.65 Q 55.8 91.8 56.4 91.5 A 27.122 27.122 0 0 0 59.389 90.082 Q 60.93 89.226 62.156 88.236 A 16.122 16.122 0 0 0 62.5 87.95 A 27.5 27.5 0 0 0 64.947 85.596 A 21.995 21.995 0 0 0 66.5 83.7 Q 68.1 81.5 69 79.45 Q 69.9 77.4 70.6 76 A 34.043 34.043 0 0 1 71.595 74.265 A 42.868 42.868 0 0 1 72.5 72.85 Q 73.6 71.2 74.65 69.45 Q 75.7 67.7 76.4 65.85 Q 77.1 64 77.1 62.1 Q 77.1 58.9 76.55 55.6 A 70.66 70.66 0 0 1 76.01 51.727 A 57.184 57.184 0 0 1 75.8 49.4 Q 75.3 42.7 74.55 35.75 Q 73.879 29.533 72.848 24.636 A 76.809 76.809 0 0 0 72.6 23.5 A 24.575 24.575 0 0 0 71.118 19.528 A 18.238 18.238 0 0 0 68.8 15.85 Q 66.3 12.8 62.7 10.9 A 29.238 29.238 0 0 0 57.325 8.737 A 35.433 35.433 0 0 0 54.6 8.05 A 68.705 68.705 0 0 0 48.819 7.097 A 85.365 85.365 0 0 0 44.8 6.7 Z M 28.2 40 L 28.2 37.3 A 42.56 42.56 0 0 1 28.431 32.943 A 48.209 48.209 0 0 1 28.55 31.9 A 84.346 84.346 0 0 1 29.277 27.153 A 76.665 76.665 0 0 1 29.4 26.5 A 11.286 11.286 0 0 1 29.846 23.276 A 9.738 9.738 0 0 1 30.85 21 Q 32.3 18.6 34.2 18.6 A 4.166 4.166 0 0 1 34.657 18.623 Q 35.368 18.702 35.6 19.05 Q 35.899 19.499 36.596 19.998 A 7.458 7.458 0 0 0 36.6 20 Q 37.9 20.9 39.5 21.3 Q 41.1 21.7 42.65 22.05 Q 44.2 22.4 45.65 22.9 Q 47.1 23.4 48.2 24.5 A 9.284 9.284 0 0 1 49.262 25.783 A 12.3 12.3 0 0 1 50 27 Q 50.8 28.5 51.4 30 Q 52 31.5 52.35 32.8 Q 52.619 33.8 52.681 34.386 A 3.011 3.011 0 0 1 52.7 34.7 A 9.057 9.057 0 0 1 52.611 35.096 Q 52.552 35.335 52.474 35.602 A 16.667 16.667 0 0 1 52.4 35.85 Q 52.213 36.457 52.027 36.933 A 10.68 10.68 0 0 1 52 37 Q 51.6 38.4 51.45 39.6 A 22.321 22.321 0 0 1 51.223 41.041 A 18.816 18.816 0 0 1 51.05 41.85 Q 50.8 42.9 50.3 43.8 Q 49.815 44.674 48.858 45.453 A 8.311 8.311 0 0 1 48.8 45.5 Q 47.7 46.3 46.6 47.05 A 11.34 11.34 0 0 0 45.135 48.247 A 13.463 13.463 0 0 0 44.5 48.9 A 8.296 8.296 0 0 0 45.51 51.096 A 7.337 7.337 0 0 0 46.45 52.25 A 9.132 9.132 0 0 1 47.757 53.924 Q 48.246 54.716 48.647 55.672 A 15.136 15.136 0 0 1 48.7 55.8 A 26.056 26.056 0 0 0 49.905 57.491 Q 50.894 58.775 52.2 60.2 Q 54.4 62.6 56.65 64.8 A 148.08 148.08 0 0 0 58.267 66.359 Q 59.073 67.123 59.802 67.788 A 79.348 79.348 0 0 0 60.65 68.55 Q 62.4 70.1 62.7 70.3 Q 63.521 71.121 64.134 71.443 A 2.543 2.543 0 0 0 64.25 71.5 Q 64.842 71.773 64.895 72.875 A 4.684 4.684 0 0 1 64.9 73.1 A 3.686 3.686 0 0 1 63.692 75.85 A 5.256 5.256 0 0 1 63.35 76.15 Q 61.8 77.4 59.3 77.4 Q 58.796 77.4 58.046 76.871 A 6.782 6.782 0 0 1 57.75 76.65 A 20.279 20.279 0 0 1 56.665 75.727 A 25.606 25.606 0 0 1 55.8 74.9 L 53.85 72.95 Q 52.9 72 52.5 71.5 A 121.571 121.571 0 0 1 48.753 67.677 Q 46.522 65.294 44.75 63.1 A 90.528 90.528 0 0 1 40.49 57.359 A 106.22 106.22 0 0 1 38.6 54.5 Q 38.1 53.7 37.45 52.75 Q 36.8 51.8 36 51.1 Q 35.6 51.8 35.6 52.6 Q 35.6 55.8 36.05 59.75 A 75.017 75.017 0 0 1 36.384 63.457 Q 36.498 65.247 36.5 66.849 A 45.527 45.527 0 0 1 36.5 66.9 A 5.414 5.414 0 0 1 36.491 67.23 Q 36.481 67.38 36.463 67.513 A 2.995 2.995 0 0 1 36.45 67.6 A 2.974 2.974 0 0 0 36.424 67.807 Q 36.4 68.056 36.4 68.4 A 3.831 3.831 0 0 0 36.664 69.778 A 4.704 4.704 0 0 0 36.85 70.2 A 4.334 4.334 0 0 1 37.214 71.213 A 3.675 3.675 0 0 1 37.3 72 A 2.391 2.391 0 0 1 37.216 72.65 A 1.803 1.803 0 0 1 36.75 73.45 A 4.496 4.496 0 0 1 35.543 74.306 A 5.099 5.099 0 0 1 35.45 74.35 Q 34.7 74.7 33.9 74.8 A 15.021 15.021 0 0 1 33.328 74.861 Q 33.045 74.885 32.792 74.895 A 8.079 8.079 0 0 1 32.5 74.9 A 2.434 2.434 0 0 1 30.489 73.929 A 3.895 3.895 0 0 1 30 73.1 Q 29.2 71.3 28.85 68.6 A 42.012 42.012 0 0 1 28.549 65.069 A 51.059 51.059 0 0 1 28.5 62.8 L 28.5 57.1 A 11.789 11.789 0 0 0 28.287 56.088 A 10.711 10.711 0 0 0 28.25 55.95 A 4.332 4.332 0 0 1 28.125 55.315 A 3.562 3.562 0 0 1 28.1 54.9 A 8.979 8.979 0 0 1 28.126 54.207 A 7.738 7.738 0 0 1 28.15 53.95 Q 28.2 53.5 28.2 53 A 29.889 29.889 0 0 0 28.153 51.303 A 27.523 27.523 0 0 0 28.15 51.25 A 29.734 29.734 0 0 1 28.1 49.556 A 32.334 32.334 0 0 1 28.1 49.5 Q 28.1 47.1 28.15 44.75 Q 28.2 42.4 28.2 40 Z M 40.163 43.238 A 19.276 19.276 0 0 0 38.2 43.9 A 22.269 22.269 0 0 0 37.818 44.057 A 26.484 26.484 0 0 0 37.15 44.35 Q 36.6 44.6 36 44.6 Q 35.6 43.9 35.6 42.9 Q 35.6 42.1 35.75 41.25 Q 35.9 40.4 35.9 39.5 A 57.666 57.666 0 0 1 35.85 38.923 A 49.831 49.831 0 0 1 35.75 37.4 Q 35.7 36.4 35.7 35.3 A 21.648 21.648 0 0 1 35.701 35.147 Q 35.705 34.479 35.75 33.45 Q 35.8 32.3 36 31.15 Q 36.103 30.557 36.246 30.044 A 7.961 7.961 0 0 1 36.55 29.15 Q 36.655 28.894 36.792 28.716 A 0.977 0.977 0 0 1 37.6 28.3 A 11.09 11.09 0 0 1 38.102 28.311 Q 41.501 28.465 42.9 30.75 A 9.829 9.829 0 0 1 44.048 33.503 A 12.255 12.255 0 0 1 44.4 36.5 A 18.651 18.651 0 0 1 44.399 36.701 Q 44.383 38.147 44.141 39.178 A 5.372 5.372 0 0 1 43.8 40.2 A 7.676 7.676 0 0 1 43.747 40.313 Q 43.16 41.531 42.3 42.2 Q 41.4 42.9 40.3 43.2 A 21.044 21.044 0 0 0 40.163 43.238 Z"
+              vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+      <div class="colorSelectors">
+        <svg viewBox="5 5 90 90" xmlns="http://www.w3.org/2000/svg" class="icon" data-color="#F5B041">
+          <circle r="45" cx="50" cy="50" fill="#F5B041" />
+      </svg>
+      <svg viewBox="5 5 90 90" xmlns="http://www.w3.org/2000/svg" class="icon" data-color="#85C1E9">
+        <circle r="45" cx="50" cy="50" fill="#85C1E9" />
+    </svg>
+    <svg viewBox="5 5 90 90" xmlns="http://www.w3.org/2000/svg" class="icon" data-color="lightgreen">
+      <circle r="45" cx="50" cy="50" fill="lightgreen" />
+  </svg>
+      </div>
+    </div>
+    <div class="bodyMid">
+      <section class="heroWrapper" id="top">
+        <div class="textWrapper">
+          <div class="textFiller">
+            <img src=" words/hello.svg" class="biggerBoy" alt="HELLO">
+            <br>
+            <h2>
+              I’m <i>Ragnar Gulin,</i> a UX designer
+              <img src="icons/lightbulb-on.svg" class="icon" alt=""> with a
+              background in psychology
+              <img src="icons/brain.svg" class="icon" alt="">, combined with skills
+              in UI <img src="icons/confetti.svg" class="icon" alt=""> and
+              front-end development
+              <img src="icons/square-code.svg" class="icon" alt="">. My diverse
+              background allows me to create user-centered
+              <img src="icons/users.svg" class="icon" alt="">
+              designs that are not only functional
+              <img src="icons/hundred-points.svg" class="icon" alt=""> and
+              user-friendly <img src="icons/heart.svg" class="icon" alt="">, but
+              also aesthetically pleasing
+              <img src="icons/hand-peace.svg" class="icon" alt="">. Feel free to
+              read more <a class="wiggle" href="#about">about me</a>
+              <img src="icons/burst.svg" class="icon" alt="">, explore my
+              <a class="wiggle" href="#work">portfolio</a>
+              <img src="icons/burst.svg" class="icon" alt="">, check out my
+              <a class="wiggle" href="#resume">resumé </a>
+              <img src="icons/burst.svg" class="icon" alt=""> or
+              <a class="wiggle" href="#contact">get in touch</a>
+              <img src="icons/burst.svg" class="icon" alt="">
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="aboutWrapper" id="about">
+        <div class="textWrapper">
+          <img src="words/about.svg" class="bigBoy" alt="ABOUT">
+          <h2 style="font-size: var(--text-mid); margin-bottom: 20px">
+            <strong style="display: inline-flex">L<img src="icons/planet-ringed.svg" class="icon"
+                alt="O">CATION:</strong>
+            gothenburg ∎ se ∎ 57.67873° N, 11.88359° E<br>
+            <strong>EDUCATION:</strong> 6+ yrs ∎ BSc psychology ∎ BSc
+            infomatics <br>
+            <strong>INTERESTS:</strong> photography, drawing, AI,
+            sustainability <br>
+            <strong>INSPIRATION:</strong> bathroom graffiti, japanese ads,
+            zines <br>
+            <strong>SOFT SKILLS:</strong> communication, agile work, empathy,
+            feedback <br>
+            <strong style="display: inline-flex">L<img src="icons/eyes.svg" class="icon" alt="OO">KING FOR:</strong>
+            full-time employment in UX/UI or front end
+          </h2>
+          <div class="twoColContainerFiftyFifty">
+            <div class="left-column">
+              <p style="font-size: var(--text-small)">
+                Grounded in Scandinavian minimalism and with a keen eye for
+                detail, my design approach combines clean aesthetics with
+                thoughtful functionality that leaves a lasting impression.
+                With a background in psychology, I transitioned to UX design
+                to blend my understanding of human behavior with a passion for
+                creating meaningful user experiences.
+                <br><br>
+                I'm particularly interested in using design as a tool to drive
+                sustainability, inclusivity, and positive change. With a broad
+                educational background, I bring a diverse skill set that
+                enables me to approach challenges creatively and thoughtfully.
+                Currently, I’m seeking opportunities to continue growing
+                professionally, developing my skills, and contributing to
+                projects that align with these values.
+              </p>
+            </div>
+            <div class="right-column">
+              <p style="font-size: var(--text-small)">
+                As a front-end developer, I specialize in creating
+                performance-friendly, pixel-perfect responsive layouts that
+                prioritize user experience and efficiency. My codebase is
+                lean, focused on optimizing performance and minimizing memory
+                use. I’m committed to continuously improving my coding skills,
+                always seeking ways to enhance both my pace and the quality of
+                my work.
+                <br><br>
+                While my expertise lies primarily in front-end
+                development—working with languages such as HTML, CSS, and
+                JavaScript—I also have back-end experience with MySQL and
+                APIs. This broader skill set allows me to collaborate
+                effectively with full-stack teams and tackle a variety of
+                project needs.
+                <br>
+                <br>
+                <span style="font-family: ElliotSix; font-size: var(--text-mid)">-R</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="portfolioWrapper" id="work">
+        <div class="textWrapper">
+          <img src="words/work.svg" class="bigBoy" alt="WORK">
+          <h2>I have hands-on experience across every phase of the design and development process, from initial research
+            and concept development to creating wireframes, prototypes, and delivering fully polished design solutions.
+            In addition to my design work, I also have programming experience. I've been involved in a wide range of
+            projects that have further sharpened my skills. Throughout these projects, I've worked with design systems,
+            MaaS (Mobility as a Service) platforms, sustainability, and more, giving me a broad background across
+            various industries and user groups. Below is a curated list of projects I've contributed to.</h2>
+          <br>
+          <br>
+          <button class="collapsible" style="
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+              ">
+            <span>01</span>
+            <span>SHARE by Volvo</span>
+            <span class="toggle-symbol">+</span>
+          </button>
+          <div class="content">
+            <div class="twoColContainerFiftyFifty">
+              <div class="left-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">methods</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">Brainstorming</li>
+                  <li style="margin-bottom: 10px">Figma prototyping</li>
+                  <li style="margin-bottom: 10px">Environmental work</li>
+                  <li style="margin-bottom: 10px">Sustainability aspects</li>
+                  <li style="margin-bottom: 10px">Storyboard</li>
+                  <li>Desktop research</li>
+                </ul>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">deliverables</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">
+                    User journey of current state
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    A brand new concept: Share by Volvo
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Research on financial impact of the solution, both for
+                    project owner and customers
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Wireframes and prototype, to be used as a base of
+                    discussion for further development
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    A presentation of the final design for stakeholders at
+                    Volvo
+                  </li>
+                </ul>
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">background</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  The automobile industry is currently going through large
+                  changes in relation to sustainable production, moving from
+                  selling products to selling a service, and changing views of
+                  ownership. Our mission was to examine ways in which Volvo
+                  could work with these changes and develop a service that
+                  aligns with Volvos values and provides a service that is
+                  environmentally, socially and economicaly sustainable. Our
+                  work led to a completely new concept, called Share by Volvo.
+                  This shared-subscription model solves several issues related
+                  to automobile ownership, enabling users to only subscribe to
+                  a car as much or little as they need to.
+                  <br>
+                  <br>
+                  As one of five UX Designers and UX Researchers, I was responsible for conducting brainstorming
+                  sessions, creating prototypes in Figma, integrating environmental and sustainability considerations,
+                  developing storyboards, and performing desktop research. My focus was on ensuring the design aligned
+                  with Volvo’s values and addressed the needs of future users.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img style="width:100%; cursor: inherit;" src="icons/asterix.svg" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">who will use the service?</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Anna, our persona from the (near) future, was created early on in the project to guide future
+                  decisions
+                  and ensure we always kept our main stakeholder in mind. Anna is a representation of many different
+                  Volvo
+                  users, fused together into one dynamic person. She is the result of both our own user research and
+                  Volvo's user data. Anna is also designed to describe the needs of users in the near future, in modern
+                  societies.
+                  <br><br>The service will be used by people who don’t need a car every day, but whose lives could be
+                  made
+                  easier by having one sometimes. Single-parent households, students, flex- workers, and people living
+                  in
+                  urban environments close to work are some of our primary stakeholders, as their needs fit well into a
+                  sharing economy.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/personaAnna.svg" class="thumbnail" onclick="openModal(this)" alt="image of a persona">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">what will the future look like?</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Before developing the service, we chose to focus on imagining what societies might look like in the
+                  near
+                  future. This would help us figure out how car ownership might fit into this reality. Anticipating an
+                  increase in remote work, we foresee a shift in the way people live and work. The trend of urban
+                  migration also suggests a higher concentration of people living in close proximity. Additionally,
+                  despite the initial higher cost, we expect electric cars to become more prevalent.
+                  <br><br>In light of these factors, questions arise about traditional car ownership. Does everyone
+                  truly
+                  need full-time access to a personal car? What if the cost of individual ownership is prohibitive?
+                  Could
+                  neighbours share a car? With these considerations in mind, our focus turned towards creating a
+                  platform
+                  where people can manage ownership, participate in the sharing economy, and book cars as needed. Such a
+                  platform has the potential to save time and money, reduce the need for extensive parking
+                  infrastructure,
+                  and contribute to environmental well-being.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/VolvoMapping.png" class="thumbnail" onclick="openModal(this)" alt="image of the process, post-its">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">economic
+                  sustainability</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Through desktop research on economic sustainability and the sharing economy, we developed a
+                  subscription model based on usage. The idea was that if you only needed a car once a week, you
+                  shouldn’t have to pay for the other six days. This concept became the foundation for "Share by Volvo."
+                  Our final design introduced a flexible subscription model where users could purchase shares of a car
+                  based on their needs. For instance, a parent who requires a car only 50% of the time could subscribe
+                  accordingly, sharing ownership and paying proportionately less.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/EconomicSustainability.png" class="thumbnail" onclick="openModal(this)" alt="image describing economic sustainability and how it aligns with the design">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">storyboarding</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  To illustrate user interaction with the service, we created a storyboard. This approach was used to
+                  demonstrate how the service could function in future scenarios, using conceptual visualization over a
+                  finished product. The storyboard depicted a user scenario of our persona Anna, sharing a car with
+                  neighbors.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" style="background-color: white;" src="images/VolvoJourney.svg" class="thumbnail" alt="a series of images showing how the service gets used by Anna and her neighbors"
+                  onclick="openModal(this)">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">final design</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  We created wireframes and prototypes in Figma to visualize how the service would work. These
+                  prototypes included user interfaces for the subscription platform and mobile application, showcasing
+                  features such as subscription management, communication tools for co-owners, and scheduling
+                  capabilities. The prototypes were designed to be user-friendly and intuitive, focusing on ease of use
+                  and accessibility.
+                  <br>
+                  <br>
+                  The Share the Care model presents a thoughtful solution that addresses economic, social, and
+                  environmental sustainability. By combining innovative subscription models, user-friendly interfaces,
+                  and
+                  an emphasis on community building, this project offers a holistic approach to redefining future car
+                  subscriptions toward a more sustainable direction. To illustrate the concept, a storyboard, a report
+                  and
+                  mixed fidelity wireframes were delivered.
+                  <br>
+                  <br>
+                  We also recognized the potential to expand the customer reach by introducing a flexible, shareable
+                  subscription model. The traditional car subscription model often caters to individuals with higher
+                  incomes, but by making car access more inclusive and economically viable for a broader audience,
+                  including those with irregular or lower incomes, we aimed to broaden the appeal of the service.
+                  <br>
+                  <br>
+                  We also addressed the varied needs of different user groups. Recognizing that not everyone requires
+                  constant access to a car, our design allows for partial subscriptions. For instance, parents with
+                  shared custody or individuals who work remotely can subscribe to a car only when needed, reducing
+                  costs and optimizing resource use.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/VolvoMobile.svg" class="thumbnail" onclick="openModal(this)" alt="image of the final design for mobile">
+                <img loading="lazy" style="margin-top:10px;" src="images/VolvoDesktop.svg" class="thumbnail" onclick="openModal(this)" alt="image of the final design for desktop">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">takeaways</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  One insight gained from this project is the importance of imposing creative limitations to facilitate
+                  a
+                  more efficient generation of ideas. Given Volvo's robust brand presence, clearly defined values,
+                  target
+                  audience, and established graphic profile, we had a well- defined scope to operate within. In many
+                  projects, it can be challenging to determine where to commence or which direction to explore when
+                  faced
+                  with numerous options. Employing a set of rules proved to be an effective method for concentrating on
+                  what can and should be accomplished. Additionally, this project served as a valuable exercise in
+                  creativity, as we aimed to conceptualize an entirely new idea within the established scope rather than
+                  merely enhancing an existing concept.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/VolvoTakeaways.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+            </div>
+          </div>
+          <button class="collapsible">
+            <span>02</span>
+            <span>National Park Service</span>
+            <span class="toggle-symbol">+</span>
+          </button>
+          <div class="content">
+            <div class="twoColContainerFiftyFifty">
+              <div class="left-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">methods</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">Desktop-research</li>
+                  <li style="margin-bottom: 10px">Think-aloud test</li>
+                  <li style="margin-bottom: 10px">Flow chart</li>
+                  <li style="margin-bottom: 10px">Wireframing</li>
+                  <li style="margin-bottom: 10px">UI-design</li>
+                  <li style="margin-bottom: 10px">High fidelity prototyping</li>
+                </ul>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">deliverables</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">
+                    Graphic manual
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Flowchart
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Persona
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Interactive, high-fidelity figma-prototype
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    A presentation of the final design
+                  </li>
+                </ul>
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">background</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  The National Park Service is a federal agency that manages the national parks of the USA. As part of their efforts to enable millions of people to enjoy the natural beauty of the American landscape, they have developed an app to help users find information about anything related to different parks. The problem is that the application, in its current form, provides too much information at a time. This makes the app hard to navigate, which leads to frustration and makes the national parks seem less accessible. Our goal was to identify user goals, painpoints, and redesign the app to better suit these purposes.
+                  <br>
+                  <br>
+                  As a UX Designer and UI Designer, I worked closely with another designer to conduct user research, create wireframes, prototype designs, and oversee user testing.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSbackground.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">desktop research</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  We began by conducting desktop research and studying user feedback from app reviews. The core issues identified were: </p>
+                  <ul>
+                    <li>Confusing navigation</li>
+                    <li>Inefficient filter system</li>
+                    <li>Overloaded landing page</li>
+                    <li>Poor mobile experience</li>
+                  </ul>
+               
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSdesktopResearch.png" class="thumbnail" onclick="openModal(this)" alt="image showing findings from desktop research">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">think-aloud testing</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Think-aloud tests was used to evaluate the design both before and after our intervention. We provided participants with a list of tasks to complete (find a specific park, find accommodation, etc.) while speaking out loud about their thought process. To keep distractions to a minimum, participants were encouraged to provide their feedback in whatever language they felt most comfortable using. All participant chose to think aloud in korean, which my partner then translated for me, enabling us both to ask follow-up questions.
+                  <br>
+                  <br>
+                  The think-aloud tests done before our intervention provided valuable insights into the usability of the current workflow and design system and allowed us to identify areas that needed improvement. For example, through the think-aloud tests, we were able to identify that participants had a hard time navigating the complex filter system, which slowed down users flow and caused frustration when using the app.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSthinkAloud.svg" class="thumbnail" onclick="openModal(this)" alt="image outlining findings from think aloud tests">
+                <img loading="lazy" src="images/NPS/NPSthinkAloud2.svg" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">prototyping</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>We began the process by creating a flowchart to outline a more efficient user flow. The key design improvements included:</p>
+<ul>
+  <li><strong>Direct filtering on the homepage:</strong> Instead of burying filters under multiple clicks, we placed essential filters (location, activities, and services) directly on the landing page.</li>
+</ul>
+<ul>
+    <li><strong>Reducing cognitive load:</strong> Using <em>Gestalt principles</em>, we improved visual clarity by grouping related information, helping users focus on primary actions without unnecessary distractions.</li>
+</ul>
+<p>We then moved on to wireframing and prototyping:</p>
+<ul>
+  <li><strong>Wireframes & Prototyping:</strong> Starting with low-fidelity wireframes in Figma, we explored various layouts. These evolved into high-fidelity prototypes, which were refined based on feedback from both internal teams and user testing.</li>
+</ul>
+<p>To ensure consistency in the design, we created a <strong>graphic manual</strong> covering key elements like colors, font sizes, margins, padding, and grids. This manual served as a reference throughout the design process. After incorporating text and images, we shared the refined design with other teams, whose feedback was helpful in fine-tuning the final product.</p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSflowchart.svg" class="thumbnail" onclick="openModal(this)" alt="image of flowchart">
+                <img loading="lazy" src="images/NPS/NPSwireframe.svg" class="thumbnail" onclick="openModal(this)" alt="image of wireframes">
+                <img loading="lazy" src="images/NPS/NPSwireframeMixFid.svg" class="thumbnail" onclick="openModal(this)" alt="image of mixed fidelity wireframes">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">final design</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>The final design significantly improved the user experience by addressing key pain points and aligning with the National Park Service's (NPS) goals of being user-friendly and efficient. The main improvements included:</p>
+                <ul>
+                  <li><strong>Simplifying the filter system:</strong> We removed unnecessary categories and made important filters (such as park location, activities, and accommodations) accessible directly from the homepage. This reduced the number of clicks and made it easier for users to find parks that met their criteria.</li>
+                </ul>
+                <ul>
+                  <li><strong>Clear visual hierarchy:</strong> By applying <em>Gestalt laws</em>, we grouped related information and ensured high-priority content (e.g., park descriptions and available facilities) stood out. This minimized information overload and improved overall clarity.</li>
+                </ul>
+                <ul>                  <li><strong>Mobile-first design:</strong> We optimized the app for mobile users, implementing a responsive design that works seamlessly on smaller screens, improving the experience for users on all devices.</li>
+                </ul>
+                <p>These improvements not only saved users several steps in navigating the app, but also reduced cognitive load by focusing attention on the most relevant information. As a result, the app became more intuitive and aligned with the NPS's mission to make park information more accessible and easier to use.</p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSfinalDesign.png" class="thumbnail" onclick="openModal(this)" alt="image of final design">
+                <img loading="lazy" src="images/NPS/NPSfinalDesign2.png" class="thumbnail" onclick="openModal(this)" alt="">
+                <img loading="lazy" src="images/NPS/NPSfinalDesign3.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">challenges</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p><strong>01: Diverse User Needs</strong>
+                  <br>
+                  <br>
+One of the main challenges was accommodating the wide range of user types, from seasoned hikers to casual visitors. We had to strike a balance between simplifying the experience for beginners while still offering depth for experienced users.
+<br><br>
+<strong>02: Prioritizing Content</strong><br><br>
+The app had a lot of important content (park regulations, weather, trails, etc.). Deciding which information to feature prominently required careful consideration to avoid overwhelming users.</p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPSissues.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">takeaways</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  This project underscored the significance of clearly defining the goal of the service being designed. Initially, the NPS application appeared to be a well-functioning tool in its current form. However, upon attempting to use it for its primary intended purpose, our research revealed its shortcomings. Our redesign successfully enhanced the user experience by ensuring alignment with the intended goal. For future projects, I will make sure to have a clear understanding of the project owner's expectations and their objectives for the end user, to make sure I design something that is useful in the way it’s intended to be.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/NPS/NPStakeaways.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+            </div>
+          </div>
+          <button class="collapsible" style="
+          border-bottom-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+        ">
+            <span>03</span>
+            <span>Aluprofil</span>
+            <span class="toggle-symbol">+</span>
+          </button>
+          <div class="content">
+            <div class="twoColContainerFiftyFifty">
+              <div class="left-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">methods</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">Card sorting test
+                  </li>
+                  <li style="margin-bottom: 10px">Think-aloud test
+                  </li>
+                  <li style="margin-bottom: 10px">Semi-structured interviews with stakeholders</li>
+                  <li style="margin-bottom: 10px">Storyboard</li>
+                  <li style="margin-bottom: 10px">Personas</li>
+                  <li style="margin-bottom: 10px">Agile workflow
+                  </li>
+                  <li style="margin-bottom: 10px">Use case scenario
+                  </li>
+                  <li style="margin-bottom: 10px">6-8-5 method
+                  </li>
+                  <li style="margin-bottom: 10px">Heuristic evaluation
+                  </li>
+                  <li style="margin-bottom: 10px">User testing
+                  </li>
+                  <li>Stakeholder mapping
+                  </li>
+                </ul>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <h2 style="font-size: var(--text-big)">deliverables</h2>
+                <ul style="list-style-type: disc">
+                  <li style="margin-bottom: 10px">
+                    Renewed excitement about the project among stakeholders
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Persona                  </li>
+                  <li style="margin-bottom: 10px">
+                    Storyboard                  </li>
+                  <li style="margin-bottom: 10px">
+                    User journey
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Interactive mixed-fidelity figma-prototype
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Interactive prototype coded in HTML, CSS & JS
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Graphic profile
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    New insights into the problem area, drawn from stakeholder interviews
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Research as a basis for further work
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    A presentation of the final design for stakeholders within the field
+                  </li>
+                </ul>
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">background</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  The aluminum production process is highly complex and every step of the production line can have an effect on the final product. Sellers and buyers often encounter misunderstandings caused by different expectations. When customers aren’t satisfied with the product they receive, they may ask for refunds, which leads to huge costs for suppliers, and increased delivery time for buyers. There currently isn’t a good and reliable way to communicate expectations clearly. Our mission was to find out what causes the misunderstandings, present a conceptual model of the aluminum manufacturing process, and deliver a prototype for an app that could be used by stakeholders. 
+                  <br>
+                  <br>
+                  As the lead UX designer and team leader, I was responsible for ensuring the project aligned with deadlines, contacting stakeholders, and overseeing the design and development process, helping out where I was needed most.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/Alu/ALUbrief.png" class="thumbnail" onclick="openModal(this)" alt="picture of the brief we received">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big);">use case scenario
+                </h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  To understand what needed to be done, we decided early on to create a simple conceptual interaction with the service. Without defining the features or practical interactions with the app, we wanted to understand the desired outcome. The use case scenario was shown to the project owner and some stakeholders during user tests, to make sure our vision aligned with what they wanted.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/Alu/ALUkontextualInteraction.jpg" class="thumbnail" onclick="openModal(this)" alt="image of contextual interaction">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">
+                  stakeholder interviews
+                  </h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  We conducted several interviews with different actors within the production chain. All of them agreed that there is a lack of communication. The interviews also showed us that the problems not only arise between the seller and buyer, but also within different actors in the chain. As an example, the temperature with which someone brings the aluminum to during shaping will have an effect on the paintjob. Since the shaper and painter usually work in different factories, they often don’t communicate these things. The interviews also showed that shipment is a large part of the issues that arise, since packing will have an effect on damages and cost. 
+                  <br>
+                  <br>
+                  Follow-up interviews were conducted to make sure we were going in the right direction. WIreframes and storyboards were used to illustrate potential uses and interactions. Stakeholder opinions were written down and helped us iterate the design further.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/Alu/ALUCardsorting.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">
+                  personas
+                  </h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Persona hypotheses were initially created based on desktop research. These were refined after stakeholder interviews to better represent the target users' needs and goals. The personas helped the team understand the different perspectives within the industry and guided the design process.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/Alu/ALUpersonaStina.png" class="thumbnail" onclick="openModal(this)" alt="image of persona Stina">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">concept sketching</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  We created concept sketches to visualize ideas and iterate on potential designs. Sketching helped us quickly explore different layouts and interactions, refining our concepts based on feedback.
+<br><br>
+                  Concept sketches were shared within the team for discussion, allowing us to identify strengths and weaknesses in each idea. This collaborative process ensured we considered diverse perspectives and refined concepts iteratively.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" style="margin-top:10px;" src="images/Alu/ALUsketch.png" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">wireframing and prototyping</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  We developed wireframes to outline the structure and layout of the service. Wireframes provided a clear blueprint for the design, allowing us to plan the placement of features and elements effectively.
+<br><br>
+                  Using Figma, we created a high-fidelity prototype with interactive elements. This prototype allowed us to test the service with users, gathering feedback on usability and functionality.
+                  <br><br>
+                  We evaluated the service against user needs and goals, ensuring it addressed key areas effectively. Feedback from user testing guided our refinements, focusing on enhancing usability and functionality.
+We used tools like heuristic evaluation and cognitive walkthroughs to assess the design from different perspectives, identifying potential improvements.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img style="margin-top:10px;" src="images/Alu/ALUlowFidProt.jpg" class="thumbnail" onclick="openModal(this)" alt="image of low fidelity prototype">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">final design</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  Upon project completion, we presented an interactive prototype to multiple stakeholders involved in the project. This prototype, rooted in insights obtained from our research, served as the initial step toward a finalized, fully integrated product. Additionally, we offered the project owners recommendations for ongoing development, encompassing suggested research areas and necessary design decisions. A report describing the entire process, insights included, was also provided to the project owners.
+<br><br><a target="_blank" href="https://www.figma.com/proto/V2CtXBSJ0Ic00921uBNSh9/Aluprofil?node-id=11-1833&node-type=canvas&t=W1ErgkbzNh2i461Z-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=53230%3A44934&show-proto-sidebar=1"><u>Check it out.</u></a>
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" style="margin-top:10px;" src="images/Alu/ALUfinalDesign1.svg" class="thumbnail" onclick="openModal(this)" alt="image of final design">
+              </div>
+              <div class="left-column">
+                <h2 style="font-size: var(--text-big)">takeaways</h2>
+              </div>
+              <div class="right-column">
+              </div>
+              <div class="left-column columnBottomPadding">
+                <p>
+                  The value of user insight. As we were navigation within a field that we knew nothing about, it was the insights gathered from stakeholders that made the project possible. Having the expertise of stakeholder enabled us to focus on what we were good at, which is UX design. An added bonus was that the stakeholders became more interested in and excited about the project because they were now a big part of the design process, rather than just being project owners.
+<br>
+<br>
+                  Agile work was a huge part of this process. I learned to be relaxed and adaptive to change and not worry too much about the process set up in the beginning. Responding to change and modifying the plan, rather than strictly following a pre-set plan, proved to be a great ability for this project. I will keep this in mind for further projects as well.
+                </p>
+              </div>
+              <div class="right-column columnBottomPadding">
+                <img loading="lazy" src="images/Alu/ALUsketch.JPG" class="thumbnail" onclick="openModal(this)" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="resumeWrapper" id="resume">
+        <div class="textWrapper">
+          <img src="words/cv.svg" class="bigBoy" alt="CV/RESUME">
+          <div class="twoColContainer">
+            <div class="left-column">
+              <h2 class="bold">EDUCATION</h2>
+              <h3>
+                Halmstad University — M.Sc. Digital Service-Innovation 120HP
+              </h3>
+              <p><strong>August 2024 - June 2026 (ongoing)</strong></p>
+              <p>
+                A design-oriented, social science IT program providing tools
+                to design and develop digital services that address future
+                challenges. The education combines informatics, service
+                science, and innovation science to offer advanced-level
+                knowledge in digital service design and informatics.
+              </p>
+              <h3>Medieinstitutet — Front End Development 400YH</h3>
+              <p><strong>August 2024 - June 2026 (ongoing)</strong></p>
+              <p>
+                Web development with a focus on CSS, HTML, and JavaScript,
+                including target audience-specific design with emphasis on
+                usability, accessibility, and UX. Enhancing skills in
+                developing, customizing, and testing web solutions for various
+                browsers and platforms, as well as working with APIs and
+                frameworks.
+              </p>
+              <h3>
+                Halmstad University — B.Sc. Digital Design & Innovation 180HP
+              </h3>
+              <p><strong>August 2021 - June 2024</strong></p>
+              <p>
+                Acquired skills in UX, UI, user-centered design, programming,
+                and creative problem-solving, while also developing innovative
+                thinking, leadership skills, and ability to collaborate within
+                cross-functional teams. Graduated with top grades and a
+                scholarship.
+              </p>
+              <h3>Konkuk University, Seoul 서울 — Exchange Semester 30HP</h3>
+              <p><strong>March 2023 - July 2023</strong></p>
+              <p>
+                Took courses in user interface design, programming, and
+                aesthetics, strengthening my technical skills and enhancing my
+                ability to collaborate with international and culturally
+                diverse groups.
+              </p>
+              <h3>Umeå University — B.Sc. Psychology 180HP</h3>
+              <p><strong>January 2018 - June 2021</strong></p>
+              <p>
+                My bachelor’s degree in psychology taught me to understand
+                human behavior and cognitive processes, which is valuable for
+                creating user-centered designs in my career as a UX designer.
+              </p>
+              <h2>Single Courses</h2>
+              <p><strong>Umeå University - Digital Images - 7.5HP</strong></p>
+              <p>
+                <strong>Linköping University - The Basics of AI - 2HP</strong>
+              </p>
+              <h2 class="bold">EXPERIENCE</h2>
+              <h3>Clarion Norre Park, Halmstad — Bartender</h3>
+              <p><strong>May 2022 - August 2023</strong></p>
+              <p>
+                Interacting with diverse individuals has enhanced my
+                understanding of user needs and communication styles,
+                enriching my user-centered design skills.
+              </p>
+              <h3>Aluprofil, Halmstad — UX Designer & Team Leader</h3>
+              <p><strong>October 2022 - December 2022</strong></p>
+              <p>
+                A research project by Halmstad University and industry
+                stakeholders aimed to create a new industry standard for
+                classifying aluminum. My team and I supported this by
+                identifying pain points, interviewing stakeholders, and
+                creating user journeys to develop a prototype sales
+                application. We also contributed to information architecture.
+                As the lead UX designer and team leader, I ensured the project
+                met deadlines and guided developers, UI designers, and UX
+                writers.
+              </p>
+            </div>
+            <div class="right-column">
+              <h2 class="bold">skills</h2>
+              <ul>
+                <li>User Research</li>
+                <li>Usability Testing</li>
+                <li>Prototyping</li>
+                <li>Visual Design</li>
+                <li>Wireframing</li>
+                <li>Interaction Design</li>
+                <li>Information Architecture</li>
+                <li>Design Thinking</li>
+                <li>Accessibility Design</li>
+                <li>Sketching</li>
+                <li>Responsive Design</li>
+              </ul>
+              <h2 class="bold">tools</h2>
+              <ul>
+                <li>Figma</li>
+                <li>Balsamiq</li>
+                <li>Photoshop</li>
+                <li>Lightroom</li>
+                <li>Premiere</li>
+                <li>SketchUp</li>
+                <li>VSCode</li>
+              </ul>
+              <h2 class="bold">code</h2>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Python (basic)</li>
+              </ul>
+              <h2 class="bold">awards</h2>
+              <ul>
+                <li>2024 Fåhré stipend</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer id="contact">
+          <div class="textWrapper">
+            <div style="display: flex; flex-direction: column">
+              <img src=" words/cont.svg" class="bigBoy" alt="CONTACT">
+              <div class="bigBoyRow">
+                <img style="
+                      height: clamp(5rem, 15vw, 20rem);
+                      margin-bottom: 50px;
+                      align-self: flex-start;
+                    " src=" words/act.svg" alt="CONTACT">
+                <div class="linkCol">
+                  <a href="https://github.com/ragnargulin" target="_blank">
+                    <svg class="smallBoy" viewBox="0 0 448.501 72.402">
+                        <path
+                          d="M 66.201 22.301 L 51.101 22.301 Q 49.601 17.701 45.551 15.051 Q 41.937 12.686 36.452 12.432 A 29.14 29.14 0 0 0 35.101 12.401 A 25.711 25.711 0 0 0 29.534 12.975 A 19.063 19.063 0 0 0 23.501 15.401 A 19.113 19.113 0 0 0 16.211 23.78 A 22.783 22.783 0 0 0 16.201 23.801 A 25.901 25.901 0 0 0 14.259 30.08 Q 13.753 32.868 13.706 36.04 A 44.171 44.171 0 0 0 13.701 36.701 Q 13.701 43.314 15.594 48.185 A 21.952 21.952 0 0 0 16.201 49.601 A 19.207 19.207 0 0 0 19.694 54.757 A 17.124 17.124 0 0 0 23.351 57.651 A 19.568 19.568 0 0 0 30.434 60.119 A 25.614 25.614 0 0 0 34.301 60.401 Q 43.501 60.401 48.251 55.451 A 20.119 20.119 0 0 0 53.136 46.645 A 26.951 26.951 0 0 0 53.901 42.601 L 36.701 42.601 L 36.701 32.501 L 67.501 32.501 L 67.501 71.201 L 55.001 71.201 L 54.001 62.301 A 23.21 23.21 0 0 1 49.843 67.047 A 21.439 21.439 0 0 1 48.851 67.851 Q 45.901 70.101 42.001 71.251 Q 38.101 72.401 33.001 72.401 Q 23.001 72.401 15.601 67.951 Q 8.201 63.501 4.101 55.451 A 37.059 37.059 0 0 1 0.577 44.353 A 48.89 48.89 0 0 1 0.001 36.701 Q 0.001 25.901 4.201 17.651 Q 8.401 9.401 16.301 4.701 A 32.786 32.786 0 0 1 27.387 0.662 A 44.282 44.282 0 0 1 35.201 0.001 Q 47.501 0.001 55.651 5.901 A 26.593 26.593 0 0 1 65.878 21.006 A 34.048 34.048 0 0 1 66.201 22.301 Z M 237.801 44.201 L 237.801 1.201 L 251.301 1.201 L 251.301 44.301 Q 251.301 49.501 253.001 53.051 A 11.867 11.867 0 0 0 255.404 56.459 A 10.777 10.777 0 0 0 257.951 58.301 Q 261.201 60.001 265.701 60.001 A 20.787 20.787 0 0 0 269.342 59.698 Q 271.453 59.323 273.194 58.48 A 12.739 12.739 0 0 0 273.551 58.301 A 11.038 11.038 0 0 0 278.254 53.541 A 13.739 13.739 0 0 0 278.501 53.051 A 16.172 16.172 0 0 0 279.721 49.36 Q 280.201 47.063 280.201 44.301 L 280.201 1.201 L 293.701 1.201 L 293.701 44.201 Q 293.701 52.113 291.119 57.716 A 21.923 21.923 0 0 1 289.901 60.001 Q 286.101 66.201 279.651 69.301 A 31.815 31.815 0 0 1 267.052 72.369 A 37.341 37.341 0 0 1 265.501 72.401 A 33.1 33.1 0 0 1 256.423 71.19 A 29.16 29.16 0 0 1 251.501 69.301 Q 245.201 66.201 241.501 60.001 A 24.542 24.542 0 0 1 238.755 53.074 Q 238.039 50.076 237.86 46.584 A 46.577 46.577 0 0 1 237.801 44.201 Z M 436.801 29.201 L 400.501 65.501 L 391.601 56.501 L 428.001 20.201 L 391.901 20.201 L 391.901 8.401 L 442.901 8.401 L 448.501 14.101 L 448.501 65.201 L 436.801 65.201 L 436.801 29.201 Z M 336.601 71.201 L 306.901 71.201 L 306.901 1.201 L 335.601 1.201 Q 341.65 1.201 346.119 2.78 A 21 21 0 0 1 347.901 3.501 A 19.446 19.446 0 0 1 352.11 6.091 A 15.524 15.524 0 0 1 355.451 9.851 A 16.622 16.622 0 0 1 357.911 17.257 A 20.677 20.677 0 0 1 358.001 19.201 Q 358.001 24.501 355.701 28.101 Q 353.401 31.701 349.651 33.651 Q 345.901 35.601 341.401 35.901 L 343.001 34.801 A 18.081 18.081 0 0 1 348.558 35.879 A 16.232 16.232 0 0 1 351.551 37.351 Q 355.301 39.701 357.451 43.601 Q 359.601 47.501 359.601 52.101 A 19.747 19.747 0 0 1 358.793 57.837 A 17.08 17.08 0 0 1 356.901 62.001 A 17.609 17.609 0 0 1 351.074 67.679 A 22.053 22.053 0 0 1 349.101 68.751 A 23.353 23.353 0 0 1 343.62 70.55 Q 340.416 71.201 336.601 71.201 Z M 320.401 40.501 L 320.401 60.201 L 334.401 60.201 A 19.478 19.478 0 0 0 337.668 59.944 Q 340.862 59.4 342.901 57.701 A 8.1 8.1 0 0 0 345.676 52.907 A 12.253 12.253 0 0 0 345.901 50.501 Q 345.901 45.801 342.801 43.151 Q 340.076 40.822 335.497 40.54 A 21.099 21.099 0 0 0 334.201 40.501 L 320.401 40.501 Z M 320.401 12.001 L 320.401 30.401 L 333.401 30.401 A 18.71 18.71 0 0 0 336.447 30.17 Q 338.049 29.905 339.33 29.336 A 8.354 8.354 0 0 0 341.451 28.001 A 7.812 7.812 0 0 0 343.983 23.518 A 11.721 11.721 0 0 0 344.201 21.201 A 10.8 10.8 0 0 0 343.83 18.293 A 7.863 7.863 0 0 0 341.451 14.451 Q 339.288 12.524 335.487 12.113 A 20.334 20.334 0 0 0 333.301 12.001 L 320.401 12.001 Z M 137.001 71.201 L 123.601 71.201 L 123.601 12.101 L 103.101 12.101 L 103.101 1.201 L 157.401 1.201 L 157.401 12.101 L 137.001 12.101 L 137.001 71.201 Z M 93.601 71.201 L 80.101 71.201 L 80.101 1.201 L 93.601 1.201 L 93.601 71.201 Z M 224.601 71.201 L 211.101 71.201 L 211.101 1.201 L 224.601 1.201 L 224.601 71.201 Z M 180.501 71.201 L 167.001 71.201 L 167.001 1.201 L 180.501 1.201 L 180.501 71.201 Z M 213.401 40.901 L 178.601 40.901 L 178.601 30.001 L 213.401 30.001 L 213.401 40.901 Z"
+                          vector-effect="non-scaling-stroke"/>
+                    </svg>
+                  </a>
+                  <a href="mailto:ragnarnilsgulin@gmail.com" target="_blank">
+                    <svg class="smallBoy" viewBox="0 0 436.2 70">
+                      <path
+                        d="M 129.4 70 L 115.9 70 L 115.9 0 L 132 0 L 153.4 43.7 L 174.6 0 L 190.7 0 L 190.7 70 L 177.2 70 L 177.2 23 L 158.7 60.2 L 148 60.2 L 129.4 23 L 129.4 70 Z M 46 70 L 0 70 L 0 0 L 46 0 L 46 10.9 L 13.5 10.9 L 13.5 29.2 L 43 29.2 L 43 39.7 L 13.5 39.7 L 13.5 59.1 L 46 59.1 L 46 70 Z M 424.5 28 L 388.2 64.3 L 379.3 55.3 L 415.7 19 L 379.6 19 L 379.6 7.2 L 430.6 7.2 L 436.2 12.9 L 436.2 64 L 424.5 64 L 424.5 28 Z M 214 70 L 199.8 70 L 225.4 0 L 240.7 0 L 266.2 70 L 251.9 70 L 233 15.4 L 214 70 Z M 346.8 70 L 302.6 70 L 302.6 0 L 316.1 0 L 316.1 59.5 L 346.8 59.5 L 346.8 70 Z M 288.9 70 L 275.4 70 L 275.4 0 L 288.9 0 L 288.9 70 Z M 101.3 46.2 L 59.1 46.2 L 59.1 34.9 L 101.3 34.9 L 101.3 46.2 Z M 253.8 54.1 L 211.1 54.1 L 214.7 43.6 L 250.3 43.6 L 253.8 54.1 Z"
+                        vector-effect="non-scaling-stroke"/>
+                  </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/ragnargulin/" target="_blank">
+                    <svg class="smallBoy" viewBox="0 0 528.1 70.001">
+                        <path
+                          d="M 96.5 70.001 L 83 70.001 L 83 0.001 L 96.5 0.001 L 128.7 48.301 L 128.7 0.001 L 142.2 0.001 L 142.2 70.001 L 128.7 70.001 L 96.5 21.801 L 96.5 70.001 Z M 390.9 70.001 L 377.4 70.001 L 377.4 0.001 L 390.9 0.001 L 423.1 48.301 L 423.1 0.001 L 436.6 0.001 L 436.6 70.001 L 423.1 70.001 L 390.9 21.801 L 390.9 70.001 Z M 267.2 70.001 L 221.2 70.001 L 221.2 0.001 L 267.2 0.001 L 267.2 10.901 L 234.7 10.901 L 234.7 29.201 L 264.2 29.201 L 264.2 39.701 L 234.7 39.701 L 234.7 59.101 L 267.2 59.101 L 267.2 70.001 Z M 169.4 70.001 L 155.9 70.001 L 155.9 0.001 L 169.4 0.001 L 169.4 27.701 L 194.7 0.001 L 211.3 0.001 L 185.6 27.701 L 212.1 70.001 L 195.6 70.001 L 175.9 38.201 L 169.4 45.201 L 169.4 70.001 Z M 516.4 28.001 L 480.1 64.301 L 471.2 55.301 L 507.6 19.001 L 471.5 19.001 L 471.5 7.201 L 522.5 7.201 L 528.1 12.901 L 528.1 64.001 L 516.4 64.001 L 516.4 28.001 Z M 302.9 70.001 L 279.5 70.001 L 279.5 0.001 L 302.9 0.001 A 56.332 56.332 0 0 1 311.452 0.612 Q 318.081 1.632 323.05 4.351 Q 331 8.701 334.85 16.551 A 36.783 36.783 0 0 1 338.04 26.694 A 49.985 49.985 0 0 1 338.7 35.001 A 49.297 49.297 0 0 1 337.91 44.042 A 36.421 36.421 0 0 1 334.85 53.451 Q 331 61.301 323.1 65.651 A 32.388 32.388 0 0 1 314.882 68.737 Q 311.203 69.606 306.919 69.877 A 63.55 63.55 0 0 1 302.9 70.001 Z M 293 11.501 L 293 58.401 L 302.2 58.401 A 43.179 43.179 0 0 0 307.219 58.127 Q 312.347 57.526 315.75 55.601 Q 320.7 52.801 322.8 47.551 Q 324.9 42.301 324.9 35.001 A 43.706 43.706 0 0 0 324.553 29.343 Q 324.174 26.437 323.377 23.957 A 24.451 24.451 0 0 0 322.8 22.351 Q 320.7 17.101 315.75 14.301 A 18.852 18.852 0 0 0 311.326 12.54 Q 309.14 11.956 306.526 11.7 A 44.49 44.49 0 0 0 302.2 11.501 L 293 11.501 Z M 44.2 70.001 L 0 70.001 L 0 0.001 L 13.5 0.001 L 13.5 59.501 L 44.2 59.501 L 44.2 70.001 Z M 69.3 70.001 L 55.8 70.001 L 55.8 0.001 L 69.3 0.001 L 69.3 70.001 Z M 363.7 70.001 L 350.2 70.001 L 350.2 0.001 L 363.7 0.001 L 363.7 70.001 Z"
+                          vector-effect="non-scaling-stroke"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p style="
+                  font-family: var(--font-hand);
+                  position: absolute;
+                  bottom: 0;
+                  align-self: center;
+                ">
+              DESIGNED & DEVELOPED BY RAGNAR GULIN ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+            </p>
+          </div>
+      </footer>
+    </div>
+    <div class="bodyRight">
+      <nav>
+        <a href="#top" class="nav-link wiggle">←</a>
+        <a href="#about" class="nav-link wiggle">about</a>
+        <a href="#work" class="nav-link wiggle">wørk</a>
+        <a href="#resume" class="nav-link wiggle">cv</a>
+        <a href="#contact" class="nav-link wiggle">@</a>
+      </nav>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>

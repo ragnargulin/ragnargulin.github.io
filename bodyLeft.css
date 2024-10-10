@@ -1,0 +1,101 @@
+.bodyLeft {
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top:4vh;
+    padding-bottom:4vh;
+
+}
+
+.logo {
+    
+    width: 70px;
+    cursor: url('icons/circleLarge.svg') 24 24, auto;
+}
+
+.colorSelectors {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+#spinning-logo {
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+
+
+.colorSelectors .icon.active-selector {
+    border-radius: 500px;
+    box-shadow: 0 0 15px rgba(160, 160, 160, 0.5); /* Optional: shadow effect */
+}
+
+
+/* Container for the logo */
+.logo-container {
+    position: relative;
+    display: inline-block;
+    }
+    
+    /* Hidden container for the hover image */
+    .hover-image-container {
+    position: fixed;
+    bottom: -150%; /* Start off the screen */
+    left: 55%;
+    transform: translateX(-50%);
+    transition: bottom 0.8s ease-in-out, transform 0.8s ease-in-out;
+    opacity: 0;
+
+    }
+    
+    /* Hover image styling */
+    .hover-image {
+    width: 600px; /* Adjust size as needed */
+    transition: transform 0.8s ease-in-out;
+    transform: translateY(50%);
+    z-index:999999999;
+    }
+    
+    /* When hovering over the logo */
+    .logo-container:hover .hover-image-container {
+    bottom: 0%; /* Bring it into view */
+    opacity: 1;
+    z-index:999999999;
+    
+    }
+    
+    /* Organic movement on hover */
+    .logo-container:hover .hover-image {
+    transform: translateY(0);
+    }
+    
+    /* When the hover ends (image drops off) */
+    .hover-image-container {
+    transition: bottom 0.8s cubic-bezier(0.6, 0, 0.4, 1), opacity 0.5s ease;
+    z-index:999999999;
+    
+    }
+
+
+
+
+
+@media (max-width: 1000px) {
+
+    .bodyLeft {
+        display: none;
+        width: 0px;
+    }
+
+    .logo {
+        display: none;
+        width: 0px;
+    }
+}
