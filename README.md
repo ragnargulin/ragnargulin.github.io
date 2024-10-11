@@ -7,6 +7,25 @@ TO DO
 - minimera allt PNG och JPG
 
 
+User feedback:
+•	Det är för många animationer och effekter.
+•	Ta bort den skakande hover-effekten på menyn och länkarna.
+•	Ta bort den snurrande logotypen.
+•	Ta bort möjligheten att ändra färg på smileyn. Om smileyn ska vara kvar, använd den orange accentfärgen som redan finns.
+•	Kanske ta bort smileyn helt, den döljer textblock i mobilvy.
+•	Brödtexten är för stor på vissa ställen, vilket gör den svår att läsa, som på startsidan. Kanske ska göras om till punktlista eller något annat för att göra den mer lättläst.
+•	För att förbättra tillgängligheten, se över hur hemsidan fungerar utan mus. Testa navigering med tab och text-till-tal. (WCAG är extra hett just nu iochmed de nya eu lagkraven)
+•	Använd din “R”-ikon som favicon istället för Pac-Man-spöket.
+•	Ändra titeltaggen och ta bort punkterna mellan favicon och namnet.
+•	Jag kan se att du döpt dina rubriker som är svgs till “Big boy” och “Bigger boy” Det är lite roligt men om du ska jobba med tillgänglighet är det bättre att ha dessa som text och göra de till H1 och H2
+
+
+På mobilen händer det lite märkliga saker... se foton. Antar att den är kodad för dator. Se t ex bathroom under inspiration.
+
+Lite inkonsekvent med gemener och versaler i rubrik och text och mellan olika stycken. Gothenburg skall stavas med versal i början, precis som Umeå och Halmstad. 
+
+Dom första e-mojisarna var kul men känns sedan lite överflödiga tycker vi.
+
 
 
 OPTIMISERING // GÖRA SIST
