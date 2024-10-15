@@ -17,17 +17,16 @@
   --color-highlight: #ff4f18;
   --color-secondary: pink;
   --font-primary: "satoshi", sans-serif;
-  --font-code: "Roboto Mono", monospace;
   --font-hand: "ElliotSix", sans-serif;
   --text-big: clamp(1.5rem, 8vw, 3.5rem);
   --text-mid: clamp(1.5rem, 2.5vw, 3rem);
-  --text-smallish: clamp(1.2rem, 2vw, 2rem);
   --text-small: clamp(1rem, 2vw, 1rem);
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     color: var(--color-black);
@@ -36,9 +35,8 @@ body {
     background-color: var(--color-white);
   }
 main {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 80vw;
+    margin: auto; /* Automatically adjust margins for centering */
   }
 hr {
     border: 1px solid var(--color-grey);
@@ -169,11 +167,10 @@ footer .textWrapper {
 }
 
 .collapsible {
-  padding: 10px;
+  padding: 20px;
   width: 100%;
   color: var(--color-white);
   font-size: var(--text-big);
-  font-family: var(--font-code);
   display: flex;
   justify-content: space-between;
   border: none;
@@ -281,7 +278,7 @@ footer .textWrapper {
     background-color: var(--color-white);
   }
 aside {
-  width: 10%;
+  width: 10vw;
   height: 100vh;
   position: fixed;
   display: flex;
@@ -407,5 +404,12 @@ nav a.active {
     .info-row {
       flex-direction: column;
       margin-bottom: 10px;
+    }
+    footer ul {
+        width: 100%;
+    }
+    footer svg {
+        display: none;
+        width: 0;
     }
   }

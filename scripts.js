@@ -18,6 +18,8 @@
             fontSize = Math.floor((minFontSize + maxFontSize) / 2);
             el.style.fontSize = fontSize + 'px';
 
+            console.log(`Font size: ${fontSize}, Overflow: ${isOverflowing(el)}`);
+
             if (isOverflowing(el)) {
                 maxFontSize = fontSize - 1; // Reduce the range
             } else {
