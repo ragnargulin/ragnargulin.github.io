@@ -121,15 +121,10 @@ window.addEventListener("load", () => {
                 backgroundIcon.style.color = ''; // Remove the inline color, falling back to the default
                 this.classList.remove('active-selector'); // Remove active class
             } else {
-                // Update the SVG's color to the new one
                 backgroundIcon.style.color = newColor;
-    
-                // Remove 'active' class from all icons
                 document.querySelectorAll('.colorSelectors .icon').forEach(i => {
                     i.classList.remove('active-selector');
                 });
-    
-                // Add 'active' class to the clicked icon
                 this.classList.add('active-selector');
             }
         });
