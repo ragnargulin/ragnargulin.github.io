@@ -15,30 +15,35 @@
   --color-grey: #7d7d7d;
   --color-black: #333333;
   --color-highlight: #ff4f18;
-  --color-secondary: pink;
+  --color-secondary: #ffc0cb;
   --font-primary: "satoshi", sans-serif;
   --font-hand: "ElliotSix", sans-serif;
   --text-big: clamp(1.5rem, 8vw, 3.5rem);
   --text-mid: clamp(1.5rem, 2.5vw, 3rem);
   --text-small: clamp(1rem, 2vw, 1rem);
-  box-sizing: border-box;
 }
 .dark-mode {
-    --color-white: #333333; /* Dark background */
-    --color-grey: #aaaaaa; /* Light grey text */
-    --color-black: #fff5e1; /* Light grey for elements */
-    --color-highlight: #85C1E9; /* Change highlight color if needed */
-    --color-secondary: #C2185B; /* Different secondary color */
+    --color-white: #333333; 
+    --color-grey: #aaaaaa;
+    --color-black: #fff5e1; 
+    --color-highlight: #18c8ff; 
+    --color-secondary: #e4c0ff; 
+  }
+
+  .dark-mode mark,::selection {
+    color:var(--color-white)
   }
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  color: var(--color-black);
-  font-family: var(--font-primary);
-  cursor: url("icons/circle.svg") 16 16, auto;
-  background-color: var(--color-white);
+margin: 0;
+color: var(--color-black);
+font-family: var(--font-primary);
+cursor: url("icons/circle.svg") 16 16, auto;
+background-color: var(--color-white);
+box-sizing: border-box;
+
 }
 main {
   width: 80vw;
