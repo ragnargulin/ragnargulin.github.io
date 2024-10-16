@@ -50,7 +50,6 @@
             window.requestAnimationFrame(() => {
                 const image = document.getElementById("spinning-logo");
                 const rotateValue = window.pageYOffset / 10;
-                // Only update if the value changes significantly (optional optimization)
                 image.style.transform = `rotate(${rotateValue}deg)`;
                 ticking = false;
             });
@@ -90,12 +89,11 @@ window.addEventListener("load", () => {
     });
     function navHighlighter() {
         let scrollY = window.pageYOffset;
-        const offsetBuffer = 100; // Adjust this value as needed
+        const offsetBuffer = 100;
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
             const sectionId = current.getAttribute("id");
-            // Adjust the active class logic to account for the buffer
             if (scrollY > sectionTop - offsetBuffer && scrollY <= sectionTop + sectionHeight - offsetBuffer) {
                 navLinks.forEach(link => {
                     if (link.getAttribute("href").includes(sectionId)) {
@@ -109,7 +107,7 @@ window.addEventListener("load", () => {
     }
 
     //BACKGROUND CIRCLE
-    document.querySelectorAll('.colorSelectors .icon').forEach(icon => {
+    document.querySelectorAll('.smileyToggler .icon').forEach(icon => {
         icon.addEventListener('click', function() {
             // Get the color from the clicked icon
             const newColor = this.getAttribute('data-color');
@@ -124,7 +122,7 @@ window.addEventListener("load", () => {
                 this.classList.remove('active-selector'); // Remove active class
             } else {
                 backgroundIcon.style.color = newColor;
-                document.querySelectorAll('.colorSelectors .icon').forEach(i => {
+                document.querySelectorAll('.smileyToggler .icon').forEach(i => {
                     i.classList.remove('active-selector');
                 });
                 this.classList.add('active-selector');
@@ -148,4 +146,13 @@ window.addEventListener("load", () => {
     if (event.key === 'Escape') {
         closeModal();
     }
+});
+
+//DARKMODE 
+
+const toggleButton = document.getElementById('toggleDarkMode');
+const body = document.body;
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
 });
