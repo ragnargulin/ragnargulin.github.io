@@ -23,20 +23,16 @@
   --text-small: clamp(1rem, 2vw, 1rem);
   box-sizing: border-box;
 }
-
 .dark-mode {
     --color-white: #333333; /* Dark background */
     --color-grey: #aaaaaa; /* Light grey text */
     --color-black: #fff5e1; /* Light grey for elements */
     --color-highlight: #85C1E9; /* Change highlight color if needed */
-    --color-secondary: lightgreen; /* Different secondary color */
+    --color-secondary: #C2185B; /* Different secondary color */
   }
-
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   color: var(--color-black);
@@ -46,9 +42,20 @@ body {
 }
 main {
   width: 80vw;
-  margin: auto; /* Automatically adjust margins for centering */
+  margin: auto;
 }
-
+section, footer {
+    min-height: 100vh;
+    border-bottom: 4px solid var(--color-black);
+    padding: 4vh 4vw 6vh;
+    overflow: hidden;
+  }
+  .bodyWrapper {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    position: relative;
+  }
 hr {
   border: 1px solid var(--color-grey);
 }
@@ -62,10 +69,6 @@ mark {
 ::-moz-selection {
   background: var(--color-secondary);
 }
-p {
-  font-size: var(--text-small);
-  margin-top: 0;
-}
 a,
 button,
 .icon {
@@ -75,39 +78,25 @@ h2 {
   margin: 0;
   font-weight: 500;
 }
+p {
+    font-size: var(--text-small);
+  }
 a {
   color: inherit;
   text-decoration: none;
 }
-
-section {
-  min-height: 100vh;
-  border-bottom: 4px solid var(--color-black);
-}
-
 .icon {
   font-size: var(--text-mid);
-  vertical-align: middle;
-  line-height: 1;
-  margin-bottom: 0;
+  margin: 0;
 }
-.bigBoy,
-.biggerBoy {
-  margin-bottom: 3vh;
-  fill:var(--color-black);
-  
-}
-.biggerBoy {
-    width: 100%;
-    height: auto;}
-
 .bigBoy {
   height: clamp(5rem, 15vw, 20rem);
   align-self: flex-start;
   margin-bottom: 50px;
   max-width: 100%;
+  margin-bottom: 3vh;
+  fill:var(--color-black);
 }
-
 .twoColContainer {
   display: grid;
   grid-template-columns: 70% 30%;
@@ -150,24 +139,21 @@ section {
   max-width: 90%;
   max-height: 90%;
 }
-
 footer {
   display: flex;
+  flex-direction: column;
   background-color: var(--color-black);
   color: var(--color-white);
   box-shadow: 0 0 0 100vmax var(--color-black);
   clip-path: inset(0 -100vmax);
-  height: 100vh;
 }
-
 footer ul {
   list-style: none;
   text-align: right;
   margin-right: 3vw;
-}
-footer li {
   font-size: var(--text-big);
 }
+
 .contactRow {
   position: absolute;
   left: 0;
@@ -177,11 +163,6 @@ footer li {
   justify-content: space-between;
   align-items: center;
 }
-footer .textWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 .collapsible {
   padding: 20px;
   width: 100%;
@@ -194,7 +175,6 @@ footer .textWrapper {
   background-color: var(--color-white);
   cursor: url("icons/circleLarge.svg") 24 24, auto;
 }
-
 .collapsible:first-of-type{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -227,7 +207,6 @@ footer .textWrapper {
   padding: 3vw;
   background-color: var(--color-white);
   border: 4px solid var(--color-black);
-
 }
 .textFiller {
   display: flex;
@@ -240,35 +219,8 @@ footer .textWrapper {
 .textFiller span {
   font-family: icons;
 }
-.bodyWrapper {
-  display: flex;
-  flex-direction: row;
-  z-index: 1;
-  position: relative;
-}
-.textWrapper {
-  padding: 4vh 4vw 6vh;
-  overflow: hidden;
-  flex-grow: 1;
-}
-.heroWrapper {
-  display: flex;
-  height: 100vh;
-}
-.heroWrapper a {
-  text-decoration: underline;
-}
-.aboutWrapper,
-.portfolioWrapper,
-.resumeWrapper {
-  background-size: 70vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.resumeWrapper {
-  list-style: disc;
-  border: none;
+.textFiller a {
+    text-decoration: underline;
 }
 .bold {
   font-weight: 700;
@@ -294,8 +246,12 @@ footer .textWrapper {
   width: auto;
   display: block;
 }
+
+.hoverColor {
+    transition: color 0.4s;
+}
 .hoverColor:hover {
-transition: color 0.4s ease-in-out;
+transition: color 0.5 ease-in-out;
   color: var(--color-highlight);
   background-color: var(--color-white);
 }
@@ -370,7 +326,6 @@ nav a {
   writing-mode: vertical-lr;
   font-size: var(--text-big);
   font-weight: 500;
-  transition: color 0.5s;
 }
 nav a.active {
   color: var(--color-highlight);
@@ -384,9 +339,6 @@ nav a.active {
   flex-direction: row;
   align-items: left;
   margin-bottom: 7px;
-}
-.inline-flex {
-  display: inline-flex;
 }
 @media (max-width: 1000px) {
   html {
