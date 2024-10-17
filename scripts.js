@@ -105,30 +105,6 @@ window.addEventListener("load", () => {
             }
         });
     }
-
-    //BACKGROUND CIRCLE
-    document.querySelectorAll('.smileyToggler .icon').forEach(icon => {
-        icon.addEventListener('click', function() {
-            // Get the color from the clicked icon
-            const newColor = this.getAttribute('data-color');
-            const backgroundIcon = document.getElementById('background-image');
-    
-            // Check if the clicked icon is already active
-            const isActive = this.classList.contains('active-selector');
-    
-            // If the clicked icon is already active, remove the inline color style
-            if (isActive) {
-                backgroundIcon.style.color = ''; // Remove the inline color, falling back to the default
-                this.classList.remove('active-selector'); // Remove active class
-            } else {
-                backgroundIcon.style.color = newColor;
-                document.querySelectorAll('.smileyToggler .icon').forEach(i => {
-                    i.classList.remove('active-selector');
-                });
-                this.classList.add('active-selector');
-            }
-        });
-    });
     
     //MODAL ZOOMED IMAGE PORTFOLIO
     function openModal(imgElement) {
@@ -156,3 +132,77 @@ const body = document.body;
 toggleButton.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
 });
+
+
+//DVD
+const dvdLogo = document.getElementById('dvdLogo');
+const toggleSmiley = document.getElementById('toggleSmiley');
+let posX = 0, posY = 0;
+let velocityX = 2, velocityY = 2;
+let animationId = null;
+function animate() {
+    posX += velocityX;
+    posY += velocityY;
+    const { innerWidth: screenWidth, innerHeight: screenHeight } = window;
+    const { clientWidth: logoWidth, clientHeight: logoHeight } = dvdLogo;
+    if (posX + logoWidth >= screenWidth || posX <= 0) velocityX = -velocityX;
+    if (posY + logoHeight >= screenHeight || posY <= 0) velocityY = -velocityY;
+    dvdLogo.style.left = `${posX}px`;
+    dvdLogo.style.top = `${posY}px`;
+    animationId = requestAnimationFrame(animate);
+}
+function toggleAnimation() {
+    if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+        dvdLogo.style.visibility = 'hidden';
+    } else {
+        dvdLogo.style.visibility = 'visible';
+        animate();
+    }
+}
+toggleSmiley.addEventListener('click', toggleAnimation);
+
+
+
+
+
+
+const spinningLogo = document.getElementById('spinning-logo');
+const logoFooter = document.querySelector('footer');
+const toggleDarkMode = document.getElementById('toggleDarkMode'); // Select the toggleDarkMode element
+
+window.addEventListener('scroll', () => {
+    // Check position of the spinning logo
+    const logoRect = spinningLogo.getBoundingClientRect();
+    const footerRect = logoFooter.getBoundingClientRect();
+
+    // Check if the logo is above the footer
+    if (logoRect.bottom >= footerRect.top) {
+        spinningLogo.style.fill = 'var(--color-white)'; // Change fill to white when above footer
+    } else {
+        spinningLogo.style.fill = 'var(--color-black)'; // Change fill to black when below footer
+    }
+
+    // Check position of toggleSmiley
+    const smileyRect = toggleSmiley.getBoundingClientRect();
+    
+    // Check if the toggleSmiley is above the footer
+    if (smileyRect.bottom >= footerRect.top) {
+        toggleSmiley.style.color = 'var(--color-white)'; // Change text color to white when above footer
+    } else {
+        toggleSmiley.style.color = 'var(--color-black)'; // Change text color to black when below footer
+    }
+
+    // Check position of toggleDarkMode
+    const darkModeRect = toggleDarkMode.getBoundingClientRect();
+    
+    // Check if the toggleDarkMode is above the footer
+    if (darkModeRect.bottom >= footerRect.top) {
+        toggleDarkMode.style.color = 'var(--color-white)'; // Change text color to white when above footer
+    } else {
+        toggleDarkMode.style.color = 'var(--color-black)'; // Change text color to black when below footer
+    }
+});
+
+
