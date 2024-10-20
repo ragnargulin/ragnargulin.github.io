@@ -284,6 +284,23 @@ footer ul {
   display: block;
 }
 
+.wiggle {
+  display: inline-block; /* Make span inline-block for the animation */
+  transition: transform 0.2s; /* Smooth transition */
+}
+
+.hoverColor:hover + .wiggle {
+  animation: wiggle 1s ease-in-out infinite; /* Trigger wiggle animation */
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .hoverColor {
     transition: color 0.4s ease-in-out;
 }

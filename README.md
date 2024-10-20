@@ -3,14 +3,12 @@
 TO DO
 - definiera rubriknivåer med flex-mått (byta ut mot dimensionerna i root kanske?). Kan man även lägga till transition, så att rubirker läses in först, sen h2, h3, p etc
 - nav till toppen eller hamburgare för mobile
-- minimera alla SVG med online-verktyg
 - minimera allt PNG och JPG
 
 
 
 
 OPTIMISERING // GÖRA SIST
-- ladda ner google fonts, och bara de storlekar som används
 - Lägg till tillgänglighetsfunktioner
 - Lägg till aria labels på allt
 - lägg till attribution link för flaticons + typsnitt satoshi
@@ -20,8 +18,6 @@ OPTIMISERING // GÖRA SIST
 FRAMTIDA GREJER
 - Other projects? Ev bara länka till insta
 - Citat från folk som jobbat med mig
-- Testa att ha stora rubrikerna bakom content? Typ i färg, så svart text kan stå över
-- Stort © 2024? Istället för handskriven text längst ner. Låg kontrast i så fall 
 
 
 DM Sans är typsnittet som använts för SVG-rubriker i nuläget. 700 weight
@@ -67,5 +63,8 @@ KLART!!
 - Ändra currentcolor på en div ist för att växla divs
 - ändra så att bilder är i line med p element i portfolio. Bara lägg p och bilder i leftRow och rightRow, med rubriken i en separat div ovanför
 - Lazy load för bilder
+- ladda ner fonts, och bara de storlekar som används
+- minimera alla SVG med online-verktyg
+
 
 
