@@ -1,144 +1,100 @@
-//TEXT ADJUSTMENT
-let ele = document.querySelector(".textFiller");
-window.addEventListener("load", () => adjustFontSize(ele));
-let resizeTimeout;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => adjustFontSize(ele), 200);
-});
-function adjustFontSize(el) {
-  // initial range for the font size
-  let minFontSize = 10;
-  let maxFontSize = 200;
+//TEXTFILLER
+const ele = document.querySelector(".textFiller");
+const adjustFontSize = (el) => {
+  let [minFontSize, maxFontSize] = [10, 200];
   let fontSize;
-  // Binary search loop for efficiency
   while (minFontSize <= maxFontSize) {
     fontSize = Math.floor((minFontSize + maxFontSize) / 2);
-    el.style.fontSize = fontSize + "px";
-
-    console.log(`Font size: ${fontSize}, Overflow: ${isOverflowing(el)}`);
-
-    if (isOverflowing(el)) {
-      maxFontSize = fontSize - 1;
-    } else {
-      minFontSize = fontSize + 1; 
-    }
+    el.style.fontSize = `${fontSize}px`;
+    isOverflowing(el) ? maxFontSize = fontSize - 1 : minFontSize = fontSize + 1;
   }
-  el.style.fontSize = fontSize - 1 + "px";
-}
-function isOverflowing(el) {
-  // Temporarily set overflow to hidden to avoid scrollbars
-  let curOverflow = el.style.overflow;
-  if (!curOverflow || curOverflow === "visible") {
-    el.style.overflow = "hidden";
-  }
-  // Check for overflow
-  let isOverflowing =
-    el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
-  el.style.overflow = curOverflow;
-  return isOverflowing;
-}
+  el.style.fontSize = `${fontSize - 1}px`; 
+};
+const isOverflowing = (el) => {
+  const curOverflow = el.style.overflow;  
+  if (!curOverflow || curOverflow === "visible") el.style.overflow = "hidden";
+  const overflow = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+  el.style.overflow = curOverflow; 
+  return overflow;
+};
+let resizeTimeout;
+const handleResize = () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => adjustFontSize(ele), 200);
+};
+window.addEventListener("load", () => adjustFontSize(ele));
+window.addEventListener("resize", handleResize);
 
-//LOGO
+// LOGO ROTATION
 let ticking = false;
-function scrollRotate() {
+const scrollRotate = () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       const image = document.getElementById("spinning-logo");
-      const rotateValue = window.pageYOffset / 10;
-      image.style.transform = `rotate(${rotateValue}deg)`;
+      image.style.transform = `rotate(${window.pageYOffset / 10}deg)`;
       ticking = false;
     });
     ticking = true;
   }
-}
+};
 window.addEventListener("scroll", scrollRotate);
 
-//COLLAPSIBLES
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach((item) => {
+// COLLAPSIBLES
+document.querySelectorAll(".collapsible").forEach(item =>
   item.addEventListener("click", function () {
-    this.classList.toggle("active"); // Toggle the 'active' class
-  });
-});
-// SAVE SCROLL POSITION
-window.addEventListener("beforeunload", () => {
-  sessionStorage.setItem("scrollPos", window.scrollY);
-});
-// RESTORE SCROLL POSITION
+    this.classList.toggle("active");
+  })
+);
+// SAVE & RESTORE SCROLL POSITION
+window.addEventListener("beforeunload", () => sessionStorage.setItem("scrollPos", window.scrollY));
 window.addEventListener("load", () => {
   const scrollPos = sessionStorage.getItem("scrollPos");
-  if (scrollPos) {
-    window.scrollTo(0, parseInt(scrollPos));
-  }
+  if (scrollPos) window.scrollTo(0, parseInt(scrollPos));
 });
 
-//SIDENAV
+// SIDENAV HIGHLIGHTER
 const sections = document.querySelectorAll("section[id], footer[id]");
 const navLinks = document.querySelectorAll("nav a");
-
-let debounceTimer;
-window.addEventListener("scroll", () => {
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(navHighlighter, 10);
-});
-function navHighlighter() {
-  let scrollY = window.pageYOffset;
-  const offsetBuffer = 100;
-  sections.forEach((current) => {
+const navHighlighter = () => {
+  const scrollY = window.scrollY;
+  sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop =
-      current.getBoundingClientRect().top + window.pageYOffset - 50;
+    const sectionTop = current.offsetTop - 100; 
     const sectionId = current.getAttribute("id");
-    if (
-      scrollY > sectionTop - offsetBuffer &&
-      scrollY <= sectionTop + sectionHeight - offsetBuffer
-    ) {
-      navLinks.forEach((link) => {
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove("active"); 
         if (link.getAttribute("href").includes(sectionId)) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
+          link.classList.add("active"); 
         }
       });
     }
   });
-}
+};
+window.addEventListener("scroll", navHighlighter);
 
-//MODAL ZOOMED IMAGE PORTFOLIO
-function openModal(imgElement) {
-  const modal = document.getElementById("imageModal");
+// MODAL ZOOMED IMAGE PORTFOLIO
+const openModal = (imgElement) => {
   const modalImage = document.getElementById("modalImage");
-  modalImage.src = imgElement.src; // Set the image source
-  modal.style.display = "flex"; // Display the modal
-}
-function closeModal() {
-  const modal = document.getElementById("imageModal");
-  modal.style.display = "none"; // Hide the modal
-}
-//CLOSE MODAL WITH KEYBOARD
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
+  modalImage.src = imgElement.src;
+  document.getElementById("imageModal").style.display = "flex";
+};
+const closeModal = () => {
+  document.getElementById("imageModal").style.display = "none";
+};
+document.addEventListener("keydown", (event) => event.key === "Escape" && closeModal());
 
-//DARKMODE
-const toggleButton = document.getElementById("toggleDarkMode");
-const body = document.body;
-toggleButton.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-});
+// DARK MODE TOGGLE
+const toggleDarkMode = document.getElementById("toggleDarkMode");
+toggleDarkMode.addEventListener("click", () => document.body.classList.toggle("dark-mode"));
 
-//DVD
+// DVD LOGO ANIMATION
 const dvdLogo = document.getElementById("dvdLogo");
 const toggleSmiley = document.getElementById("toggleSmiley");
-let posX = 0,
-  posY = 0;
-let velocityX = 2,
-  velocityY = 2;
+let posX = 0, posY = 0;
+let velocityX = 2, velocityY = 2;
 let animationId = null;
-function animate() {
+const animate = () => {
   posX += velocityX;
   posY += velocityY;
   const { innerWidth: screenWidth, innerHeight: screenHeight } = window;
@@ -148,8 +104,8 @@ function animate() {
   dvdLogo.style.left = `${posX}px`;
   dvdLogo.style.top = `${posY}px`;
   animationId = requestAnimationFrame(animate);
-}
-function toggleAnimation() {
+};
+const toggleAnimation = () => {
   if (animationId) {
     cancelAnimationFrame(animationId);
     animationId = null;
@@ -158,31 +114,21 @@ function toggleAnimation() {
     dvdLogo.style.visibility = "visible";
     animate();
   }
-}
+};
 toggleSmiley.addEventListener("click", toggleAnimation);
 
-//ASIDE SVART ELLER VIT BEROENDE PÅ FOOTER
+//BLACK/WHITE FOOTER
 const spinningLogo = document.getElementById("spinning-logo");
 const logoFooter = document.querySelector("footer");
-const toggleDarkMode = document.getElementById("toggleDarkMode");
+const elementsToCheck = [
+  { el: spinningLogo, styleProp: "fill", white: "var(--color-white)", black: "var(--color-black)" },
+  { el: toggleSmiley, styleProp: "color", white: "var(--color-white)", black: "var(--color-black)" },
+  { el: toggleDarkMode, styleProp: "color", white: "var(--color-white)", black: "var(--color-black)" }
+];
 window.addEventListener("scroll", () => {
-  const logoRect = spinningLogo.getBoundingClientRect();
-  const footerRect = logoFooter.getBoundingClientRect();
-  if (logoRect.bottom >= footerRect.top) {
-    spinningLogo.style.fill = "var(--color-white)";
-  } else {
-    spinningLogo.style.fill = "var(--color-black)";
-  }
-  const smileyRect = toggleSmiley.getBoundingClientRect();
-  if (smileyRect.bottom >= footerRect.top) {
-    toggleSmiley.style.color = "var(--color-white)";
-  } else {
-    toggleSmiley.style.color = "var(--color-black)";
-  }
-  const darkModeRect = toggleDarkMode.getBoundingClientRect();
-  if (darkModeRect.bottom >= footerRect.top) {
-    toggleDarkMode.style.color = "var(--color-white)";
-  } else {
-    toggleDarkMode.style.color = "var(--color-black)";
-  }
+  const footerTop = logoFooter.getBoundingClientRect().top;
+  elementsToCheck.forEach(({ el, styleProp, white, black }) => {
+    const elBottom = el.getBoundingClientRect().bottom;
+    el.style[styleProp] = elBottom >= footerTop ? white : black;
+  });
 });
