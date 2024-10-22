@@ -89,7 +89,7 @@ const toggleDarkMode = document.getElementById("toggleDarkMode");
 toggleDarkMode.addEventListener("click", () => document.body.classList.toggle("dark-mode"));
 
 // DVD LOGO ANIMATION
-const dvdLogo = document.getElementById("dvdLogo");
+const dvd = document.getElementById("dvd");
 const toggleSmiley = document.getElementById("toggleSmiley");
 let posX = 0, posY = 0;
 let velocityX = 2, velocityY = 2;
@@ -98,20 +98,20 @@ const animate = () => {
   posX += velocityX;
   posY += velocityY;
   const { innerWidth: screenWidth, innerHeight: screenHeight } = window;
-  const { clientWidth: logoWidth, clientHeight: logoHeight } = dvdLogo;
+  const { clientWidth: logoWidth, clientHeight: logoHeight } = dvd;
   if (posX + logoWidth >= screenWidth || posX <= 0) velocityX = -velocityX;
   if (posY + logoHeight >= screenHeight || posY <= 0) velocityY = -velocityY;
-  dvdLogo.style.left = `${posX}px`;
-  dvdLogo.style.top = `${posY}px`;
+  dvd.style.left = `${posX}px`;
+  dvd.style.top = `${posY}px`;
   animationId = requestAnimationFrame(animate);
 };
 const toggleAnimation = () => {
   if (animationId) {
     cancelAnimationFrame(animationId);
     animationId = null;
-    dvdLogo.style.visibility = "hidden";
+    dvd.style.visibility = "hidden";
   } else {
-    dvdLogo.style.visibility = "visible";
+    dvd.style.visibility = "visible";
     animate();
   }
 };
